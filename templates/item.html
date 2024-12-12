@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+{% if data.Approved or request.user.is_superuser %}
+<div class="container_detail">
+  <div class="item_detail item_image_div">
+    <div class="main_image">
+      <img src="/media/{{data.Upload_image}}" class="item_image_div_ main_upload" alt="">
+    </div>
+    <div class="multiple">
+      {% for i in data.images.all %}
+      <img src="/media/{{i.Upload_image}}" onclick="fun(event)" class="img_upload" alt="">
+      {% endfor %}
+    </div>
+    <div class="item_detail item_discription_div">
+      <h5>Description</h5>
+      {{data.Description}}
+    </div>
+  </div>
+  <div class="item_detail item_price_div">
+    <div class="item_price">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
+      <h2>{{data.SET_A_PRICE}}</h2>
+    </div>
+    <div>
+      <p>{{data.title}}</p>
+    </div>
+    <div class="item_detail item_seller_div">
+      <div class="seller_info">
+         <img src="/media/image/default.jpg"  class="profile" alt="">
+         
+         
+        
+
+        {{data.user}}
+      </div>
+      <div class="call">
+        <button><i class="fa-solid fa-envelope"></i><a href="mailto:{{data.user.email}}">Contact with seller</a></button>
+      </div>
+    </div>
+    <div class="item_detail item_garb_div">
+      <h2>Posted in</h2>
+      <p>Nit Kurukshetra, Haryana</p>
+    </div>
+  </div>
+</div>
+{% else %}
+<p  style="background-color:#a3c7e0; border-radius: 5px; text-align: center; height: 25px;">Request is Not Approved Yet</p> 
+
+{% endif %}
+<script>
+  function fun(event) {
+    var main_img = document.querySelector(".main_upload");
+    var upload = event.target;
+    if (main_img && upload && upload.src) {
+      main_img.src = upload.src;
+      event.preventDefault(); // Prevent default behavior of the anchor tag
+    } 
+  }
+</script>
+
+{% endblock %}

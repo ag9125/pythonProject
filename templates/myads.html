@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+{% for content in lst %}
+{% if content.Approved %}
+<a href="/item/{{content.id}}">
+<div class="adbox">
+  <div class="adbox-head">
+    <div class="adbox-image-title">
+      <img src="/media/{{content.Upload_image}}" style="border-radius: 5px;" height="70px" width="70px" alt="">
+      <p>{{content.title}}</p>
+    </div>
+    <div class="adbox-price">
+      <div><i class="fa-solid fa-indian-rupee-sign"></i></div>
+      
+      <div><h5 style="font-weight: bold;">{{content.SET_A_PRICE}}</h5></div>
+    </div>
+    <div class="adbox-des">
+      <p>{{content.Description}}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="adbox-foot">
+    <div class="delete-update">
+      <a href="/deleteitem/{{content.id}}/" class="btn btn-danger">Delete</a>
+      <a  href="/updateitem/{{content.id}}/" class="btn btn-primary">Update</a>
+    </div>
+  </div>
+</div></a>
+{% endif %}
+{% endfor %}
+<!-- <table class="table border-black">
+    <thead>
+       
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Item_Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
+      </tr>
+     
+    </thead>
+    <tbody>
+        {% for content in lst %}
+        <tr>
+           <th scope="row">{{forloop.counter}}</th>
+            <td>{{content.title}}</td>
+           <td> <img src="/media/{{content.Upload_image}}" height="200px" width="200px" alt=""></td>
+           <td>{{content.Description}}</td>
+           <td>
+            <a href="/deleteitem/{{content.id}}/" class="btn btn-danger">Delete</a>
+           </td>
+           <td>
+            <a  href="/updateitem/{{content.id}}/" class="btn btn-primary">Update</a>
+           </td>
+         </tr>
+         {% endfor %}
+    </tbody>
+  </table>
+{% endblock  %} -->

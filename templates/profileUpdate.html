@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Profile</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+		
+		form {
+			max-width: 400px;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+		
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		textarea {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin-bottom: 15px;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			width: 100%;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+	</style>
+</head>
+<body>
+	<h1>Update Profile</h1>
+	<form method="post" enctype="multipart/form-data" action="{% url 'profileUpdate' %}">
+            {% csrf_token %}
+		<label for="name">Username:</label>
+		<input type="text" id="name" name="name" value="{{request.user.username}}">
+		<label for="name">Firstname:</label>
+		<input type="text" id="name" name="firstname" value="{{request.user.first_name}}">
+		<label for="name">Lastname:</label>
+		<input type="text" id="name" name="lastname" value="{{request.user.first_name}}">
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" value="{{request.user.email}}">
+
+		<label for="bio">Bio:</label>
+		<textarea id="bio" name="bio" ></textarea>
+
+        <label for="phone">Phone Number:</label>
+		<input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+
+		<label for="dob">Date of Birth:</label>
+		<input type="date" id="dob" name="dob">
+
+		<label for="pImage">Upload Image:</label>
+		<input type="file" id="pImage" name="pImage">
+
+		<input type="submit" value="Update Profile">
+	
+</body>
+</html>

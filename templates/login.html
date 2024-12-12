@@ -1,0 +1,126 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+
+          content="width=device-width, 
+
+                         initial-scale=1.0">
+
+    <title>CAMPUS MARKET</title>
+
+    <link rel="stylesheet"
+
+          href="/static/stylelogin.css">
+          <style>
+            body{
+              height: auto;
+              overflow-x: hidden;
+            }
+          </style>
+    
+</head>
+ 
+
+<body>
+
+    <header>
+
+        <h1 class="heading">CAMPUS MARKET</h1>
+
+        <h3 class="title"> Login & Registration Form</h3>
+
+    </header>
+ 
+
+    <!-- container div -->
+
+    <div class="container">
+ 
+
+        <!-- upper button section to select
+
+             the login or signup form -->
+
+        <div class="slider"></div>
+
+        <div class="btn">
+
+            {% comment %} <button class="login">Login</button>
+
+            <button class="signup">Signup</button> {% endcomment %}
+            <button class="login" onclick="window.location.href='/login'">Login</button>
+                {% comment %} <a href="/">Home</a> {% endcomment %}
+            <button class="signup" onclick="window.location.href='/signup'">Signup</button>
+
+        </div>
+
+        {% if messages %}
+        {{message.tags}}
+        <div>
+        {% for message in messages %}
+        <p style="color: red ;margin-left: 120px; font-size: 20px;">{{ message}}</p>
+        {% endfor %}
+        </div>
+       
+        {% endif %}
+        <!-- Form section that contains the
+
+             login and the signup form -->
+        <form method="post">
+        {% csrf_token %}
+        <div class="form-section">
+ 
+
+            <!-- login form -->
+
+            <div class="login-box">
+
+                <input type="text"
+
+                       class="username ele" name="username"
+
+                       placeholder="Enter Username">
+                {% comment %} <input type="email"
+
+                       class="email ele" name="email"
+
+                       placeholder="youremail@email.com" required="True"> {% endcomment %}
+
+            
+
+                <input type="password"
+
+                       class="password ele" name="password"
+
+                       placeholder="password" required="True">
+
+                <button class="clkbtn">Login</button>
+
+               
+                <a  href="{% url 'password_reset' %}">forget password?</a>
+
+            </div>
+        </form>
+ 
+
+            <!-- signup form -->
+
+            
+
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

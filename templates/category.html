@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="button">
+    <a href="/"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <div class="content_sell">
+
+    <!-- Add more item_sell divs as needed -->
+    {% for content in store %}
+    {% if content.Approved %}
+    <div class="item_sell">
+      <a href="/item/{{content.id}}">
+        <div class="item_contain">
+
+          <div class="item_img">
+            <img src="/media/{{content.Upload_image}}" class="sell_image" alt="">
+          </div>
+          <span class="item_price">
+             <i class="fa-solid fa-indian-rupee-sign"></i>
+             <h3>{{content.SET_A_PRICE}}</h3>
+          </span>
+        
+          <div class="extra">{{content.title}}</div>
+          <div class="item_desc">
+            {{content.Description}}
+          </div>
+          <div>
+            <i class="fas fa-calendar"></i> Listing Date:
+            <span class="float-right ">{{content.list_date}}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+    {% empty %}
+    No Data Found
+    {% endfor %}
+    <div class="ads">
+      <div>
+        <p>Want to see your stuff here?</p>
+        <p>Make some extra cash by selling things in your community. Go on, it's quick and easy.</p>
+      </div>
+      <button><a href="/recipee/">Start Selling</a></button>
+    </div>
+    
+  </div>
+{% endblock  %}

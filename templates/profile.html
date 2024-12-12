@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %} 
+
+{% block content %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+        <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+        </div>          
+
+        <!-- Main Content Here -->
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-3 my-5">
+            {% if user.profile.profile_image %}
+            <img src="{{user.profile.profile_image.url}}" class="rounded float-right"  height="300px" width="300px">
+            {% else %}
+            <img src="{{user.profile.default.jpg.url}}" class="rounded float-right" height="300px" width="300px">
+            {% endif %}
+          </div>
+          <div class="card o-hidden border-0 shadow-lg my-5 col-lg-5">
+            <div class="card-body">
+                <h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
+                <p><strong>Username: </strong> {{user.username}} </p>
+                <p><strong>Email: </strong> {{user.email}} </p>
+                <p><strong>Bio: </strong> {{user.profile.bio}} </p>
+                <p><strong>Phone Number: </strong> {{user.profile.phone_number}} </p>
+                <p><strong>DOB: </strong> {{user.profile.birth_date}} </p>
+                <div>
+                <a href="{% url 'profileUpdate' %}" class="btn btn-sm btn-primary shadow-sm">Update Profile</a>
+                <a href="{% url 'change-password' %}" class="btn btn-sm btn-primary shadow-sm">Change Password</a>
+                <a href="{% url 'password_reset' %}" class="btn btn-sm btn-primary shadow-sm">Reset Password</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+    </div>
+    <!-- /.container-fluid -->
+{% endblock content %}

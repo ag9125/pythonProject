@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CAMPUS MARKET-One Stop Solution For all Old material</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="/static/logo.jpg" type="image">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+body{
+  width: 100%;
+  box-sizing: border-box;
+}
+.table{
+  width: 100%;
+}
+    nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 75px;
+      background: #2980b9;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      max-width: 100%;
+      background: #2980b9;
+      margin-left: 40px;
+    }
+
+    nav .navbar .logo a {
+      color: #fff;
+      font-size: 27px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    .menu_contain{
+      display: flex;
+      box-sizing: border-box;
+    }
+    nav .navbar .menu {
+      display: flex;
+    }
+
+    .navbar .menu li {
+      list-style: none;
+      margin: 0 15px;
+    }
+
+    .navbar .menu li a {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    
+    .button a {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      color: #002f34;
+      background: #2980b9;
+      padding: 7px 12px;
+      font-size: 18px;
+      border-radius: 6px;
+      box-shadow: rgba(0, 0, 0, 0.15);
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 10px 15px;
+      margin-right: 10px;
+    }
+
+    .search-input:focus {
+      outline: none;
+    }
+
+    .search-button {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .search-button i {
+      color: #333;
+    }
+
+    .content_sell {
+      width: 100%;
+      max-width: 1200px;
+      margin: 5px auto 20px auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(280px, 1fr));
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    .item_sell {
+      padding: 5px;
+      height: auto;
+      border: 1px solid rgba(77, 72, 15, 0.914);
+      border-radius: 5px;
+      padding: 8px;
+
+    }
+    .item_sell a{
+      color: black;
+    }
+
+    .item_img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    .item_img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      
+    }
+
+    .item_price {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .item_desc {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 96%;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .ads {
+      height: auto;
+      border: 1px solid rgba(77, 72, 15, 0.914);
+      background-color: blue;
+      border-radius: 5px;
+      padding: 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .footer-area{
+        padding: 40px 0px;
+        background-color:#2980b9;
+        color: #fff;
+    }
+    .footer-area a{
+        text-decoration: none;
+    }
+    .footer-area .footer-heading{
+        font-size: 24px;
+        color: #fff;
+    }
+    .footer-area .footer-underline{
+        height: 1px;
+        width: 70px;
+        background-color: #ddd;
+        margin: 10px 0px;
+    }
+    .copyright-area{
+        padding: 14px 0px;
+        background-color: #262626;
+    }
+    .copyright-area p{
+        margin-bottom: 0px;
+        color: #fff;
+    }
+    .copyright-area .social-media{
+        text-align: end;
+    }
+    .copyright-area .social-media a{
+        margin: 0px 10px;
+        color: #fff;
+        width: 20px;
+    }
+    .contain{
+      width: 100%;
+      background-color:#2980b9 ;
+    }
+
+   
+   
+    .container_detail {
+  padding: 20px; /* OLX uses padding instead of margin */
+  margin-top: 10px;
+  margin-bottom: 80px;
+  display: flex; /* OLX uses flexbox instead of grid */
+  flex-wrap: wrap; /* Wrap items when needed */
+}
+
+.item_detail {
+  flex: 1; /* Each item takes equal space */
+  border: 1px solid #e0e0e0; /* OLX uses a lighter border color */
+  border-radius: 5px;
+  gap: 15px;
+  padding:16px;
+
+  font-size: 16px; /* OLX uses a smaller font size */
+  background-color: #fff; /* Background color */
+}
+.item_seller_div{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.item_image_div {
+ width: 100%;
+  flex-basis: 55%; 
+  padding-right: 20px; /* Add some spacing between items */
+}
+
+.item_price_div {
+  flex-basis: 25%; /* Each item takes half of the container width */
+  padding-left: 20px; /* Add some spacing between items */
+}
+
+.main_image img {
+ 
+  width: 100%; /* Make the image fill its container */
+  height: 100%; /* Maintain aspect ratio */
+  object-fit:contain;
+}
+.main_image{
+  background-color: black;
+  height: 35vw;
+}
+.recommend{
+  margin-top: 4px;
+  height: 2em;
+  width: 100%;
+  padding-left: 24px;
+  
+}
+.slider{
+  width: 100%;
+  display: flex;
+  padding-right: 20px;
+  justify-content: end;
+}
+.multiple {
+  margin-top: 10px; /* Add some spacing between the main image and multiple images */
+}
+
+.multiple img {
+  border-radius: 4px;
+ 
+  width: 80px; /* OLX uses smaller thumbnail sizes */
+  height: 80px; /* OLX uses smaller thumbnail sizes */
+  margin-right: 10px; /* Add some spacing between images */
+  object-fit: cover;
+}
+
+.item_discription_div {
+  margin-top: 20px; /* Add some spacing between description and images */
+}
+.img_upload{
+  cursor: pointer;
+}
+.item_price {
+  display: flex;
+  align-items: center;
+}
+
+.item_price i {
+ font-size: 24px;
+
+  margin-right: 5px;
+  margin-bottom: 7px;
+}
+.item_image_div_{
+  
+  object-fit: contain;
+}
+.profile {
+  width: 50px; /* OLX uses smaller profile picture sizes */
+  height: 50px; /* OLX uses smaller profile picture sizes */
+  border-radius: 50%;
+  
+
+   /* Placeholder color for profile picture */
+  margin-right: 10px; /* Add some spacing between profile picture and username */
+}
+
+.seller_info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px; /* Add some spacing between price and seller info */
+}
+
+.call button {
+  background-color: #007bff; /* OLX uses blue color for buttons */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.call button:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+.hero{
+    width: 100%;
+    margin-top: 76px;
+    height: 4rem;
+    box-shadow: 1px 1px 6px black;
+    display:flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #82bee6;
+    align-items: center;
+    color: white;
+   }
+   .catog{
+    display: flex;
+    gap : 5px;
+   }
+   .hero a{
+    color: white;
+    font-weight: bold;
+   }
+
+   /* for myads */
+   .adbox{
+    box-sizing: border-box;
+    height: 170px;
+    width: 95%;
+    margin: 20px;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+      background-image:url('/static/logo.jpg');
+       background-size:auto; 
+   }
+   .adbox-head{
+    height: 90px;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .adbox-foot{
+    height: 50px;
+   display: flex;
+    padding-right: 20px;
+    justify-content: end;
+   }
+   .adbox-image-title{
+    width: 25vw;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500;
+      color:#2980b9;
+   }
+   .adbox-price{
+    display: flex;
+    height: 50px;
+    width: 100px;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+    color:#2980b9;
+   }
+   .adbox-des{
+    white-space: nowrap;
+      overflow: hidden;
+      text-overflow:ellipsis;
+    width: 30vw;
+    color:#2980b9;
+      font-weight: 500;
+
+   }
+     
+
+   /* category */
+   .dropbtn {
+  background-color:#2980b9;
+  color: white;
+  font-weight: 500;
+  /* padding: 16px; */
+  font-size: 16px;
+  border: none;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#82bee6;
+  min-width: 60px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+.logo {
+  display: flex;
+  align-items: center;
+  /* Add other styles like font-family, colors, etc. */
+}
+
+.nit {
+  font-style: italic;
+
+  font-weight: bold;
+  /* Add styles for the "Nit" text */
+}
+
+.market {
+  font-style: italic;
+  /* Add styles for the "Market" text */
+}
+
+/* newly added */
+.toggle_bar{
+            position: fixed;
+            height: 100%;
+            width: 280px;
+            float: right;
+            backdrop-filter: blur(25px);
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+            transition: left 0.3s ease;
+            left: -280px;
+           
+            
+        }
+        .menu-toggle{
+          display: none;
+        }
+@media only screen and (max-width: 1155px) {
+      /* nav .navbar {
+        max-width: 95%;
+      } */
+
+      .content_sell {
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        padding: 0 15px;
+      }
+      .menu_contain{
+      display: none;
+     }
+      .menu-toggle {
+        display: block;
+            height: 100vh;
+            width: 2px;
+            position: absolute;
+        top: 0;
+        right: 50px;  
+           
+        }
+        
+        #check {
+            display: none;
+        }
+        #check:checked ~ .toggle_bar {
+            left: 0;
+        }
+        .logo_bar {
+            height: 60px;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+        }
+        .btn_one, .btn_two {
+            position: absolute;
+            top: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .btn_one i, .btn_two i {
+            color: white;
+            font-size: 24px;
+            padding: 0 20px;
+        }
+        .btn_two {
+            left: 240px;
+        }
+        ul {
+            position: relative;
+            top: 60px;
+        }
+        ul li {
+            list-style-type: none;
+            padding: 14px 20px;
+            transition: all 0.3s ease;
+        }
+        ul li:hover {
+            border-left: 2px solid #fff;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+        }
+        ul a {
+            text-decoration: none;
+            color:#007bff;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+        ul li i {
+            color:black;
+            font-size: 20px;
+            padding-right: 8px;
+        }
+        .social_media {
+            position: absolute;
+            top: 95vh;
+            left: 140px;
+        }
+        .social_media i {
+            color: white;
+            font-size: 20px;
+            padding: 4px;
+        }
+        .social_media i:hover {
+            color: blue;
+        }
+   
+    }
+    /* @media only screen and (max-width: 660px) {
+       
+      .logo{
+        display: none;
+      }
+     
+    } */
+
+   
+    @media only screen and (max-width: 768px) {
+      /* nav .navbar {
+        max-width: 95%;
+      } */
+
+      .content_sell {
+        margin-top: 80px;
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        padding: 0 15px;
+      }
+    }
+  
+    @media only screen and (max-width: 610px) {
+      .content_sell {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        padding: 0 10px;
+      }
+      body{
+        width: 620px;
+      }
+
+        }
+  
+        @media only screen and (max-width: 770px) {
+       
+       .logo_write{
+         display: none;
+       }
+       .container_detail{
+        margin-top: 80px;
+       }
+       .hero{
+        display: none;
+       }
+      }
+      
+     
+     
+
+  </style>
+</head>
+
+<body>
+ <div class="nav-conatiner">
+  <nav>
+    <div class="navbar">
+      <div class="logo">
+        <a href="/"><img src="/static/logo.jpg" width="50px" height="50px" alt="" style="border-radius: 50%;"></a>
+        <div class="logo_write">
+          <a href="/">
+            <span class="nit">Campus</span>
+            <span class="market">Market</span>
+          </a>
+        </div>
+      </div>
+      
+      <form>
+        <div class="search-form">
+          <input type="search" placeholder="Search your product" class="search-input" name="serch" />
+          <button class="search-button" type="submit" >
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
+
+
+      <div class="menu_contain">
+        <ul class="menu">
+          {% if request.user.is_superuser %}
+          <li><a href="/requests/">Requests</a></li>
+          {% else %}
+          <li><a href="/">Home</a></li>
+          {% endif %}
+          {% if request.user.is_authenticated %}
+          <li><a href="/myads/">Account</a></li>
+          {% endif %}
+          <li><div class="dropdown">
+            <button class="dropbtn" >Category</button>
+            <div class="dropdown-content">
+              {% for i in cats  %}
+              <a href="/category/{{i.id}}">{{i.name}}</a>
+              {% endfor %}
+            </div>
+          </div></li>
+          
+          {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+          
+          {% comment %} <li><a href="/log_out/">Log Out</a></li>
+  
+          {% else %}
+          <li><a href="/login/">Login</a></li>
+          <li><a href="/signup/">SignUp</a></li>
+          {% endif %}
+          
+          <li><a href="/sell/">SELL</a></li> {% endcomment %}
+          <li><a href="/sell/" href="SELL">SELL</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="/profile/">
+            {% if user.profile.profile_image %}
+            <img src="{{user.profile.profile_image.url}}"  style="border-radius: 50%; width:30px; height: 30px;">
+            {% else %}
+            <img src="{{user.profile.default.url}}" class="rounded float-right" height="30px" width="30px" style="border-radius : 50% ;" >
+            {% endif %}
+          </a>
+        </li>
+          <li><a href="/log_out/">Log Out</a></li>
+       
+         {% comment %} <li><a href="/ log_out/">Log Out</a></li> {% endcomment %}
+          {% else %}
+          <li><a href="/login/">Login</a></li>
+          <li><a href="/signup/">SignUp</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+
+    <!--  -->
+    <div class="menu-toggle">
+      <input type="checkbox" id="check">
+      <div class="btn_one">
+          <label for="check">
+              <i class="fas fa-bars"></i>
+          </label>
+      </div>
+      <div class="toggle_bar">
+          <div class="logo_bar">
+           
+              <!-- <a href="/"><img src="/static/logo.jpg" width="50px" height="50px" alt="" style="border-radius: 50%;"></a> -->
+              <h3>Campus Market</h3>
+              <!-- <div class="logo_write">
+                <a href="/">
+                  <span class="nit">Campus</span>
+                  <span class="market">Market</span>
+                </a> -->
+              
+          </div>
+          <div class="btn_two">
+              <label for="check">
+                  <i class="fas fa-times"></i>
+              </label>
+          </div>
+          <ul>
+            {% if request.user.is_superuser %}
+            <li><a href="/requests/">Requests</a></li>
+            {% else %}
+            <li><a href="/">Home</a></li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <li><a href="/myads/">Account</a></li>
+            {% endif %}
+            <li><div class="dropdown">
+              <button class="dropbtn" >Category</button>
+              <div class="dropdown-content">
+                {% for i in cats  %}
+                <a href="/category/{{i.id}}">{{i.name}}</a>
+                {% endfor %}
+              </div>
+            </div></li>
+           
+            {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+            
+            {% comment %} <li><a href="/log_out/">Log Out</a></li>
+    
+            {% else %}
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/signup/">SignUp</a></li>
+            {% endif %}
+            
+            <li><a href="/sell/">SELL</a></li> {% endcomment %}
+            <li><a href="/sell/" href="SELL">SELL</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="/profile/">
+              {% if user.profile.profile_image %}
+              <img src="{{user.profile.profile_image.url}}"  style="border-radius: 50%; width:30px; height: 30px;">
+              {% else %}
+              <img src="{{ MEDIA_URL }}default.jpg" class="rounded float-right" height="30px" width="30px" style="border-radius : 50% ;" >
+              {% endif %}
+            </a>
+          </li>
+            <li><a href="/log_out/">Log Out</a></li>
+         
+           {% comment %} <li><a href="/ log_out/">Log Out</a></li> {% endcomment %}
+            {% else %}
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/signup/">SignUp</a></li>
+            {% endif %}
+          </ul>
+        
+      </div>
+    <!--  -->
+  </nav>
+
+  <div class="hero">
+   
+    <div class="catog">
+      <h5><a href="/">All Categories</a></h5>
+     <a href="/"> <i class="fa-solid fa-layer-group"></i></a>
+    </div>
+    {% for i in cats  %}
+    <a href="/category/{{i.id}}">{{i.name}}</a>
+    {% endfor %}
+    
+
+
+      
+    </div>
+   
+    
+    </div>
+  
+ </div>

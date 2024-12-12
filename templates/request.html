@@ -1,0 +1,58 @@
+{% include "header.html" %}
+<div class="recommend">
+<h4>Requests</h4><hr>
+
+</div>
+  <div class="content_sell">
+
+    <!-- Add more item_sell divs as needed -->
+    {% for content in store %}
+    
+    
+    <div class="item_sell">
+      <a href="/item/{{content.id}}">
+        <div class="item_contain">
+
+          <div class="item_img">
+            <img src="/media/{{content.Upload_image}}" class="sell_image" alt="">
+          </div>
+          <span class="item_price">
+             <i class="fa-solid fa-indian-rupee-sign"></i>
+             <h3>{{content.SET_A_PRICE}}</h3>
+          </span>
+        
+          <div class="extra">{{content.title}}</div>
+          <div class="item_desc">
+            {{content.Description}}
+          </div>
+          <div>
+            <i class="fas fa-calendar"></i> Listing Date:
+            <span class="float-right ">{{content.list_date}}</span>
+          </div>
+        </div>
+      </a>
+     
+        <a href="/approve/{{content.id}}/" class="btn btn-primary form-control">Approve</a>
+   
+        
+    </div>
+  
+    {% empty %}
+   <p  style="background-color:#a3c7e0; border-radius: 5px; text-align: center; height: 25px;">No Requests Found</p> 
+    
+    {% endfor %}
+  
+    
+  </div>
+ 
+
+
+      
+      
+    
+  </div>
+</div>
+  {% include "footer_olx.html" %}
+</body>
+
+</html>

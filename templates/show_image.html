@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background: #081b29;
+}
+h2{
+    position: relative;
+    font-size: 6rem;
+    letter-spacing: 15px;
+    color: #0e3742;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0008);
+    line-height: 0.7em;
+    outline: none;
+    animation: animate 4s linear infinite;
+
+}
+
+@keyframes animate{
+    0%{
+        color: #0e3742;
+    }
+    20%{
+        color: #fff;
+        text-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0053b8f7,
+                1px 1px 80px #0053b8f7,
+                1px 1px 120px #0053b8f7,
+                1px 1px 150px #0053b8f7;
+
+    }
+    40%{
+        color: #0e3742;
+        text-shadow: 0px 0px 0px #0e3742;
+    }
+    45%{
+        color: #fff;
+        text-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0053b8f7,
+                1px 1px 80px #0053b8f7,
+                1px 1px 120px #0053b8f7,
+                1px 1px 150px #0053b8f7;
+    }
+    48%{
+        color: #0e3742;
+        text-shadow: 0px 0px 0px #0e3742;
+    }
+    49%{
+        color: #fff;
+        text-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0053b8f7,
+                1px 1px 80px #0053b8f7,
+                1px 1px 120px #0053b8f7,
+                1px 1px 150px #0053b8f7;
+    }
+    51%{
+        color: #0e3742;
+        text-shadow: 0px 0px 0px #0e3742;
+    }
+    53%{
+        color: #fff;
+        text-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0053b8f7,
+                1px 1px 80px #0053b8f7,
+                1px 1px 120px #0053b8f7,
+                1px 1px 150px #0053b8f7;
+    }
+    60%{
+        color: #0e3742;
+        text-shadow: 0px 0px 0px #0e3742;
+    }
+    80%{
+        color:#fff;
+        text-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0053b8f7,
+                1px 1px 80px #0053b8f7,
+                1px 1px 120px #0053b8f7,
+                1px 1px 150px #0053b8f7;
+    }
+}
+    </style>
+</head>
+<body>
+    <h2 contenteditable="true">welcome</h2>
+    <h2 contenteditable="true">To</h2>
+    <h2 contenteditable="true">Campus Market</h2>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                window.location.href = "{% url 'homepage' %}";
+            }, 4000); 
+        });
+    </script>
+</body>
+</html>
