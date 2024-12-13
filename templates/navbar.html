@@ -7,6 +7,7 @@
 
     <!-- Add more item_sell divs as needed -->
     {% for content in store %}
+    {% if content.Approved %}
     <div class="item_sell">
       <a href="/item/{{content.id}}">
         <div class="item_contain">
@@ -29,10 +30,11 @@
           </div>
         </div>
       </a>
-     
     </div>
-    {% empty %}
-    No Data Found
+    {% endif %}
+   
+    
+   
     {% endfor %}
   
     <div class="ads">
@@ -40,25 +42,11 @@
         <p>Want to see your stuff here?</p>
         <p>Make some extra cash by selling things in your community. Go on, it's quick and easy.</p>
       </div>
-      <button><a href="/sell/">Start Selling</a></button>
+      <a href="/sell/" class='btn btn-light'>Start Selling</a>
     </div>
     
   </div>
-  <!-- {% if store.has_previous %}
-  <button><a href="/?page={{store.previous_page_number}}">Previous</a></button>
-  {% endif %}
-  {% if store.has_next %}
-  <button><a href="/?page={{store.next_page_number}}">Next</a></button>
-    
-  {% endif %}
-  {% for page in totalPageList  %}
-    <button><a href="/?page={{page}}">{{page}}</a></button>
-  {% endfor %}
-  <button><a href="/?page={{totalPage}}">Last</a></button> -->
-  {% comment %} {% for user in users %}
-{{user}}
-{% endfor %} {% endcomment %}
-{% comment %} {{request.user}} {% endcomment %}
+  
 <div class="slider">
   <div aria-label="...">
     <ul class="pagination">
@@ -74,6 +62,7 @@
       {% endif %}
       {% for page in totalPageList  %}
       <li class="page-item"><a class="page-link" <a href="/?page={{page}}">{{page}}</a></li>
+     
   {% endfor %}
       
       

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% if data.Approved or request.user.is_superuser %}
 <div class="container_detail">
   <div class="item_detail item_image_div">
     <div class="main_image">
@@ -25,14 +26,10 @@
     </div>
     <div class="item_detail item_seller_div">
       <div class="seller_info">
-        <div class="profile">
-          <img src="\media\Default.jpg" style="border-radius: 50%; width:50px; height: 50px;" alt="">
-          <!-- {% comment %} {% if user.profile.profile_image %}
-          <img src="{{user.profile.profile_image.url}}" class="rounded float-right" style="border-radius: 50%; width:50px; height: 50px;">
-          {% else %}
-          <img src="\media\Default.jpg" class="rounded float-right" style="border-radius: 50%; width:50px; height: 50px;">
-          {% endif %} {% endcomment %} -->
-        </div>
+         <img src="/media/image/default.jpg"  class="profile" alt="">
+         
+         
+        
 
         {{data.user}}
       </div>
@@ -46,7 +43,10 @@
     </div>
   </div>
 </div>
+{% else %}
+<p  style="background-color:#a3c7e0; border-radius: 5px; text-align: center; height: 25px;">Request is Not Approved Yet</p> 
 
+{% endif %}
 <script>
   function fun(event) {
     var main_img = document.querySelector(".main_upload");
@@ -57,6 +57,5 @@
     } 
   }
 </script>
-
 
 {% endblock %}

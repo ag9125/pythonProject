@@ -19,6 +19,12 @@
     <link rel="stylesheet"
 
           href="/static/stylelogin.css">
+          <style>
+            body{
+              height: auto;
+              overflow-x: hidden;
+            }
+          </style>
     
 </head>
  
@@ -29,7 +35,7 @@
 
         <h1 class="heading">CAMPUS MARKET</h1>
 
-        <h3 class="title">Sliding Login & Registration Form</h3>
+        <h3 class="title"> Login & Registration Form</h3>
 
     </header>
  
@@ -97,6 +103,9 @@
                        placeholder="password" required="True">
 
                 <button class="clkbtn">Login</button>
+
+               
+                <a  href="{% url 'password_reset' %}">forget password?</a>
 
             </div>
         </form>

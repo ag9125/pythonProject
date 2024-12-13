@@ -19,11 +19,12 @@
                     <div class="col-md-3">
                         <h4 class="footer-heading">Shop Now</h4>
                         <div class="footer-underline"></div>
-                        <div class="mb-2"><a href="" class="text-white">Collections</a></div>
-                        <div class="mb-2"><a href="" class="text-white">Trending Products</a></div>
-                        <div class="mb-2"><a href="" class="text-white">New Arrivals Products</a></div>
-                        <div class="mb-2"><a href="" class="text-white">Featured Products</a></div>
-                        <div class="mb-2"><a href="" class="text-white">Cart</a></div>
+                        
+                        <div class="mb-2"><a href="/" class="text-white">New Arrivals Products</a></div>
+                        <div class="mb-2">
+                            {% if request.user.is_authenticated %}
+                        <a class="text-white" href="/myads/">Account</a>
+                        {% endif %}</div>
                     </div>
                     <div class="col-md-3">
                         <h4 class="footer-heading">Reach Us</h4>
@@ -34,12 +35,12 @@
                             </p>
                         </div>
                         <div class="mb-2">
-                            <a href="" class="text-white">
-                                <i class="fa fa-phone"></i> +91 888-XXX-XXXX
+                            <a href="Https://Wa.Me/9369599113" class="text-white">
+                                <i class="fa fa-phone"></i> +91 936-XXX-XXXX
                             </a>
                         </div>
                         <div class="mb-2">
-                            <a href="" class="text-white">
+                            <a href="mailto:ankitgi@gmail.com" class="text-white">
                                 <i class="fa fa-envelope"></i> nitkkr@gmail.com
                             </a>
                         </div>
@@ -56,10 +57,10 @@
                     <div class="col-md-4">
                         <div class="social-media">
                             Get Connected:
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-instagram"></i></a>
-                            <a href=""><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
