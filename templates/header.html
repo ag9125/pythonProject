@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" >
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
-  <title>CAMPUS MARKET-One Stop Solution For all Old material</title>
+  <title>NIT MARKET-One Stop Solution For all Old material</title>
+  <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+  <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="icon" href="/media/logo.jpg" type="image">
+  <link rel="icon" href="/static/logo.jpg" type="image">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
     * {
       margin: 0;
@@ -19,7 +23,6 @@
     }
 body{
   width: 100%;
-  box-sizing: border-box;
 }
 .table{
   width: 100%;
@@ -37,7 +40,7 @@ body{
     nav .navbar {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       height: 100%;
       max-width: 100%;
       background: #2980b9;
@@ -51,10 +54,7 @@ body{
       text-decoration: none;
       margin-left: 20px;
     }
-    .menu_contain{
-      display: flex;
-      box-sizing: border-box;
-    }
+
     nav .navbar .menu {
       display: flex;
     }
@@ -71,7 +71,6 @@ body{
       text-decoration: none;
     }
 
-    
     .button a {
       position: fixed;
       bottom: 20px;
@@ -215,8 +214,23 @@ body{
       background-color:#2980b9 ;
     }
 
-   
-   
+    @media only screen and (max-width: 768px) {
+      nav .navbar {
+        max-width: 95%;
+      }
+
+      .content_sell {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        padding: 0 15px;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .content_sell {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        padding: 0 10px;
+      }
+    }
     .container_detail {
   padding: 20px; /* OLX uses padding instead of margin */
   margin-top: 10px;
@@ -313,8 +327,7 @@ body{
   height: 50px; /* OLX uses smaller profile picture sizes */
   border-radius: 50%;
   
-
-   /* Placeholder color for profile picture */
+  background-color: #ccc; /* Placeholder color for profile picture */
   margin-right: 10px; /* Add some spacing between profile picture and username */
 }
 
@@ -470,178 +483,18 @@ body{
   /* Add styles for the "Market" text */
 }
 
-/* newly added */
-.toggle_bar{
-            position: fixed;
-            height: 100%;
-            width: 280px;
-            float: right;
-            backdrop-filter: blur(25px);
-            box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-            transition: left 0.3s ease;
-            left: -280px;
-           
-            
-        }
-        .menu-toggle{
-          display: none;
-        }
-@media only screen and (max-width: 1155px) {
-      /* nav .navbar {
-        max-width: 95%;
-      } */
-
-      .content_sell {
-        grid-template-columns: repeat(3, minmax(250px, 1fr));
-        padding: 0 15px;
-      }
-      .menu_contain{
-      display: none;
-     }
-      .menu-toggle {
-        display: block;
-            height: 100vh;
-            width: 2px;
-            position: absolute;
-        top: 0;
-        right: 50px;  
-           
-        }
-        
-        #check {
-            display: none;
-        }
-        #check:checked ~ .toggle_bar {
-            left: 0;
-        }
-        .logo_bar {
-            height: 60px;
-            box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
-            font-weight: 500;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 24px;
-        }
-        .btn_one, .btn_two {
-            position: absolute;
-            top: 0;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .btn_one i, .btn_two i {
-            color: white;
-            font-size: 24px;
-            padding: 0 20px;
-        }
-        .btn_two {
-            left: 240px;
-        }
-        ul {
-            position: relative;
-            top: 60px;
-        }
-        ul li {
-            list-style-type: none;
-            padding: 14px 20px;
-            transition: all 0.3s ease;
-        }
-        ul li:hover {
-            border-left: 2px solid #fff;
-            box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
-        }
-        ul a {
-            text-decoration: none;
-            color:#007bff;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 20px;
-        }
-        ul li i {
-            color:black;
-            font-size: 20px;
-            padding-right: 8px;
-        }
-        .social_media {
-            position: absolute;
-            top: 95vh;
-            left: 140px;
-        }
-        .social_media i {
-            color: white;
-            font-size: 20px;
-            padding: 4px;
-        }
-        .social_media i:hover {
-            color: blue;
-        }
-   
-    }
-    /* @media only screen and (max-width: 660px) {
-       
-      .logo{
-        display: none;
-      }
-     
-    } */
-
-   
-    @media only screen and (max-width: 768px) {
-      /* nav .navbar {
-        max-width: 95%;
-      } */
-
-      .content_sell {
-        margin-top: 80px;
-        grid-template-columns: repeat(2, minmax(250px, 1fr));
-        padding: 0 15px;
-      }
-    }
-  
-    @media only screen and (max-width: 610px) {
-      .content_sell {
-        grid-template-columns: repeat(2, minmax(150px, 1fr));
-        padding: 0 10px;
-      }
-      body{
-        width: 620px;
-      }
-
-        }
-  
-        @media only screen and (max-width: 770px) {
-       
-       .logo_write{
-         display: none;
-       }
-       .container_detail{
-        margin-top: 80px;
-       }
-       .hero{
-        display: none;
-       }
-      }
-      
-     
-     
-
   </style>
 </head>
 
 <body>
- <div class="nav-conatiner">
   <nav>
     <div class="navbar">
       <div class="logo">
-        <a href="/"><img src="/media/logo.jpg" width="50px" height="50px" alt="" style="border-radius: 50%;"></a>
-        <div class="logo_write">
-          <a href="/">
-            <span class="nit">Campus</span>
-            <span class="market">Market</span>
-          </a>
-        </div>
+        <img src="/static/logo.jpg" width="50px" height="50px" alt="" style="border-radius: 50%;">
+        <a href="#">
+          <span class="nit">Campus</span>
+          <span class="market">Market</span>
+        </a>
       </div>
       
       <form>
@@ -652,151 +505,70 @@ body{
           </button>
         </div>
       </form>
-
-
-      <div class="menu_contain">
-        <ul class="menu">
-          {% if request.user.is_superuser %}
-          <li><a href="/requests/">Requests</a></li>
-          {% else %}
-          <li><a href="/">Home</a></li>
-          {% endif %}
-          {% if request.user.is_authenticated %}
-          <li><a href="/myads/">Account</a></li>
-          {% endif %}
-          <li><div class="dropdown">
-            <button class="dropbtn" >Category</button>
-            <div class="dropdown-content">
-              {% for i in cats  %}
-              <a href="/category/{{i.id}}">{{i.name}}</a>
-              {% endfor %}
-            </div>
-          </div></li>
-          
-          {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
-          
-          {% comment %} <li><a href="/log_out/">Log Out</a></li>
-  
-          {% else %}
-          <li><a href="/login/">Login</a></li>
-          <li><a href="/signup/">SignUp</a></li>
-          {% endif %}
-          
-          <li><a href="/sell/">SELL</a></li> {% endcomment %}
-          <li><a href="/sell/" href="SELL">SELL</a></li>
-          {% if request.user.is_authenticated %}
-          <li><a href="/profile/">
-            {% if user.profile.profile_image %}
-            <img src="{{user.profile.profile_image.url}}"  style="border-radius: 50%; width:30px; height: 30px;">
-            {% else %}
-            <img src="{{user.profile.default.url}}" class="rounded float-right" height="30px" width="30px" style="border-radius : 50% ;" >
-            {% endif %}
-          </a>
-        </li>
-          <li><a href="/log_out/">Log Out</a></li>
-       
-         {% comment %} <li><a href="/ log_out/">Log Out</a></li> {% endcomment %}
-          {% else %}
-          <li><a href="/login/">Login</a></li>
-          <li><a href="/signup/">SignUp</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-
-
-    <!--  -->
-    <div class="menu-toggle">
-      <input type="checkbox" id="check">
-      <div class="btn_one">
-          <label for="check">
-              <i class="fas fa-bars"></i>
-          </label>
-      </div>
-      <div class="toggle_bar">
-          <div class="logo_bar">
-           
-              <!-- <a href="/"><img src="/static/logo.jpg" width="50px" height="50px" alt="" style="border-radius: 50%;"></a> -->
-              <h3>Campus Market</h3>
-              <!-- <div class="logo_write">
-                <a href="/">
-                  <span class="nit">Campus</span>
-                  <span class="market">Market</span>
-                </a> -->
-              
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a href="/myads/">Account</a></li>
+        {% endif %}
+        <li><div class="dropdown">
+          <button class="dropbtn" onclick="func()" ondblclick="func2()">Category</button>
+          <div class="dropdown-content">
+            {% for i in cats  %}
+            <a href="/category/{{i.id}}">{{i.name}}</a>
+            {% endfor %}
           </div>
-          <div class="btn_two">
-              <label for="check">
-                  <i class="fas fa-times"></i>
-              </label>
-          </div>
-          <ul>
-            {% if request.user.is_superuser %}
-            <li><a href="/requests/">Requests</a></li>
-            {% else %}
-            <li><a href="/">Home</a></li>
-            {% endif %}
-            {% if request.user.is_authenticated %}
-            <li><a href="/myads/">Account</a></li>
-            {% endif %}
-            <li><div class="dropdown">
-              <button class="dropbtn" >Category</button>
-              <div class="dropdown-content">
-                {% for i in cats  %}
-                <a href="/category/{{i.id}}">{{i.name}}</a>
-                {% endfor %}
-              </div>
-            </div></li>
-           
-            {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+        </div></li>
+        <script>
+          function func(){
             
-            {% comment %} <li><a href="/log_out/">Log Out</a></li>
-    
-            {% else %}
-            <li><a href="/login/">Login</a></li>
-            <li><a href="/signup/">SignUp</a></li>
-            {% endif %}
-            
-            <li><a href="/sell/">SELL</a></li> {% endcomment %}
-            <li><a href="/sell/" href="SELL">SELL</a></li>
-            {% if request.user.is_authenticated %}
-            <li><a href="/profile/">
-              {% if user.profile.profile_image %}
-              <img src="{{user.profile.profile_image.url}}"  style="border-radius: 50%; width:30px; height: 30px;">
-              {% else %}
-              <img src="{{ MEDIA_URL }}default.jpg" class="rounded float-right" height="30px" width="30px" style="border-radius : 50% ;" >
-              {% endif %}
-            </a>
-          </li>
-            <li><a href="/log_out/">Log Out</a></li>
-         
-           {% comment %} <li><a href="/ log_out/">Log Out</a></li> {% endcomment %}
-            {% else %}
-            <li><a href="/login/">Login</a></li>
-            <li><a href="/signup/">SignUp</a></li>
-            {% endif %}
-          </ul>
+           btn =  document.querySelector(".dropdown-content");
+           btn.style.display = "block";
+
+
+          }
+ function func2(){
+  btn =  document.querySelector(".dropdown-content");
+           btn.style.display = "none";
+ }
+        </script>
+        {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
         
-      </div>
-    <!--  -->
-  </nav>
+        {% comment %} <li><a href="/log_out/">Log Out</a></li>
 
+        {% else %}
+        <li><a href="/login/">Login</a></li>
+        <li><a href="/signup/">SignUp</a></li>
+        {% endif %}
+        
+        <li><a href="/sell/">SELL</a></li> {% endcomment %}
+        <li><a href="/sell/" href="SELL">SELL</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a href="/log_out/">Log Out</a></li>
+        <li><a href="/profile/">
+          
+          <img src="\media\default.jpg" class="rounded float-right" height="30px" width="30px" style="border-radius : 50%" >
+         
+        </a>
+        
+      
+        {% else %}
+        <li><a href="/login/">Login</a></li>
+        <li><a href="/signup/">SignUp</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  <div class="button">
+    <a href="/"><i class="fas fa-arrow-up"></i></a>
+  </div>
   <div class="hero">
-   
     <div class="catog">
       <h5><a href="/">All Categories</a></h5>
-     <a href="/"> <i class="fa-solid fa-layer-group"></i></a>
+     <a href="#"> <i class="fa-solid fa-layer-group"></i></a>
     </div>
     {% for i in cats  %}
     <a href="/category/{{i.id}}">{{i.name}}</a>
     {% endfor %}
     
-
-
-      
-    </div>
-   
     
     </div>
-  
- </div>

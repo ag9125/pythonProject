@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lender Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .add-link {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #333;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-link:hover {
+      background-color: #555;
+    }
+
+    .lender-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align items at the start */
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .lender-box {
+      width: 1000px; /* Increased width to accommodate new layout */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: row; /* Align elements in row */
+    }
+
+    .lender-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .lender-info {
+      flex-grow: 1; /* Allow details to grow and take remaining space */
+      padding-right: 20px; /* Add space between image/details and contact details */
+    }
+
+    .lender-image {
+        background: #000;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-link {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #333;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-link:hover {
+      background-color: #555;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #333;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lender-container">
+    <div class="lender-box">
+      <img src="/media/{{content.Upload_image}}" alt="Lender 2" class="lender-image">
+      <div class="lender-info">
+        <h2>
+            {{content.title}}
+        </h2>
+        <p>Price : {{content.SET_A_PRICE}}</p>
+        <p class="description">Description: {{content.Description}}</p>
+      </div>
+      <div class="contact-details">
+        
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+    <!-- Add more lender boxes as needed -->
+  </div>
+
+</body>
+</html>
+
+{% endblock content %}
