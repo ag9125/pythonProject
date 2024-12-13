@@ -109,6 +109,14 @@
 
     <div class="container">
         <p class='ss' > Signup Form</p>
+         {% if messages %}
+        {{message.tags}}
+        <div>
+        {% for message in messages %}
+        <p style="color: red ;margin-left: 90px; font-size: 16px;">{{ message}}</p>
+        {% endfor %}
+        </div>
+        {% endif %}
         <form method="post" action="{% url 'signup' %}">
             {% csrf_token %}
             <div class="form-section">
