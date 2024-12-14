@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*iwzr+=yh@ix^youl4@jba=y#-#-c%s8s5oomjd=j#j0eqzeee
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -82,13 +82,22 @@ WSGI_APPLICATION = 'pythonProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }py
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'campusMarket',
+        'USER': 'AnkitGupta',
+        'PASSWORD': 'Ankit@Gupta5',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
-
 
 
 # Password validation
@@ -125,20 +134,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-# STATIC_URL = 'static/'
+STATIC_URL = 'static/'
 
-# # Default primary key field type
-# # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# STATICFILES_DIRS =[
-#     BASE_DIR , "static"
-# ]
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
+STATICFILES_DIRS =[
+    BASE_DIR , "static"
+]
 # for profile
 # import os
 # MEDIA_ROOT=os.path.join(BASE_DIR,'media')
@@ -163,6 +168,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rockninja54329@gmail.com'
-EMAIL_HOST_PASSWORD = 'nyha wufl ynhp lsmi'
+EMAIL_HOST_USER = 'ankitgi9125@gmail.com'
+EMAIL_HOST_PASSWORD = 'rfnq ewwx hrjc uqzp'
 EMAIL_USE_TLS = True
