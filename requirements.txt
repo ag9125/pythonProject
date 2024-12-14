@@ -22,7 +22,6 @@ flyingcircus==0.1.4.1
 idna==3.6
 jarvis==0.1.9
 jinxed==1.2.1
-mysqlclient==2.2.6
 oauthlib==3.2.2
 packaging==24.0
 phonenumbers==8.13.30
