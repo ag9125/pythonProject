@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'campusMarket',
         'USER': 'AnkitGupta',
         'PASSWORD': 'Ankit@Gupta5',
-        'HOST': '127.0.0.1',
+        'HOST': '2620:119:35::35',
         'PORT': '3306',
     }
 }
