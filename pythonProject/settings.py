@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'pythonProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'campusMarket',
-        'USER': 'AnkitGupta',
-        'PASSWORD': 'Ankit@Gupta5',
-        'HOST': '2620:119:35::35',
+        'NAME': 'sql5754281',
+        'USER': 'sql5754281',
+        'PASSWORD': 'Zva44gJHgU',
+        'HOST': 'http://sql5.freesqldatabase.com/',
         'PORT': '3306',
     }
 }
