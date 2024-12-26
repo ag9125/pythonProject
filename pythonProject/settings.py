@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'sql5754281',
         'USER': 'sql5754281',
         'PASSWORD': 'Zva44gJHgU',
-        'HOST': 'http://sql5.freesqldatabase.com/',
+        'HOST': 'sql5.freesqldatabase.com',
         'PORT': '3306',
     }
 }
